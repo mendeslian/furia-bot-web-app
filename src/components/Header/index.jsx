@@ -2,7 +2,7 @@ import FuriaLogo from "../../assets/furia-esports-logo.svg";
 
 export default function Header() {
   const anchorClass =
-    "text-white text-sm font-semibold tracking-[2%] cursor-pointer duration-500 relative px-[6px] hover:text-white focus:text-white focus:outline-none before:content-[''] before:absolute before:rounded-full before:bottom-[-6px] before:left-0 before:w-0 before:h-[3px] before:bg-gradient-to-r before:bg-white before:duration-500 hover:before:w-full focus:before:w-full md:text-[15px] md:px-[10px]";
+    "text-white text-sm font-semibold tracking-[2%] cursor-pointer duration-500 relative px-[6px] hover:text-white focus:text-white focus:outline-none before:content-[''] before:absolute before:rounded-full before:bottom-[-6px] before:left-0 before:w-0 before:h-[3px] before:bg-gradient-to-r before:from-yellow-800 before:to-yellow-500 before:duration-500 hover:before:w-full focus:before:w-full md:text-[15px] md:px-[10px]";
 
   const headerOptions = [
     {

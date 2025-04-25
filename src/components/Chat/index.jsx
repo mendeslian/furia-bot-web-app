@@ -46,8 +46,10 @@ function MessageCard({ role, message, isLoading, onCopy }) {
   return (
     <div className={messageClasses}>
       {role === "model" && (
-        <span className="text-sm text-white/80 font-bold mb-2 flex items-center justify-between">
-          Furia BOT
+        <div className="flex items-center justify-between mb-2">
+          <span className="text-sm font-bold bg-gradient-to-br from-yellow-500 to-yellow-700 text-transparent bg-clip-text">
+            Furia BOT
+          </span>
           {!isLoading && (
             <button
               title="Copiar mensagem"
@@ -58,7 +60,7 @@ function MessageCard({ role, message, isLoading, onCopy }) {
               <Icon icon="Copy" size={16} color="white" />
             </button>
           )}
-        </span>
+        </div>
       )}
       {isLoading ? (
         <div className="flex items-center justify-center py-2">
