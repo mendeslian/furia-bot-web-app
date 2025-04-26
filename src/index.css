@@ -81,5 +81,9 @@ html {
 }
 
 .scroll-animation {
-  animation: scrollLeft 20s linear infinite;
+  animation-name: scrollLeft;
+  animation-duration: 20s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  position: absolute;
 }
