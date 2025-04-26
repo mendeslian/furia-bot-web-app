@@ -32,14 +32,14 @@ export default function TeamSection() {
   return (
     <section className="w-full min-h-150 bg-radial from-neutral-800 from-20% to-neutral-900 py-20 border-y-1 border-neutral-800 ">
       <div className="max-w-5xl h-full mx-auto flex flex-col items-start gap-6 px-5">
-        <header className="w-full flex flex-col items-center justify-center gap-2">
+        <div className="w-full flex flex-col items-center justify-center gap-2">
           <h2 className="text-3xl font-bold text-white">
             Line-up Furia E-Sports
           </h2>
           <p className="text-lg font-semibold text-white/80 text-center">
             Conheça a equipe que está por trás do sucesso dos nossos jogos
           </p>
-        </header>
+        </div>
         <div className="w-full h-full flex flex-wrap justify-center gap-8">
           {teamMembers.map((member, index) => (
             <TeamMember
