@@ -73,3 +73,13 @@ html {
   scrollbar-width: 1px;
   scrollbar-color: #454545 #242424;
 }
+
+@keyframes scrollLeft {
+  to {
+    left: -200px;
+  }
+}
+
+.scroll-animation {
+  animation: scrollLeft 20s linear infinite;
+}
