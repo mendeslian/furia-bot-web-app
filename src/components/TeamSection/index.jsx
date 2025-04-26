@@ -37,7 +37,7 @@ export default function TeamSection() {
             Line-up Furia E-Sports
           </h2>
           <p className="text-lg font-semibold text-white/80 text-center">
-            Conheça a equipe que está por trás do sucesso dos nossos jogos.
+            Conheça a equipe que está por trás do sucesso dos nossos jogos
           </p>
         </header>
         <div className="w-full h-full flex flex-wrap justify-center gap-8">
