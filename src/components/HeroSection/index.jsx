@@ -4,7 +4,7 @@ import FuriaBackground from "../../assets/furia-background.png";
 export default function HeroSection() {
   return (
     <section
-      className="w-full h-180 relative flex flex-col justify-center items-center"
+      className="w-full h-[calc(100vh-80px)]  relative flex flex-col justify-center items-center"
       aria-labelledby="welcome-heading"
     >
       <div

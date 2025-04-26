@@ -30,7 +30,7 @@ export default function BrandSection() {
             key={index}
             className="w-40 h-16 scroll-animation"
             style={{
-              left: "max(calc(40rem), 100%)",
+              left: "calc(200px * 6 )",
               animationDelay: `calc(20s / 6 * (6 - ${index + 1}) * -1)`,
             }}
           >
