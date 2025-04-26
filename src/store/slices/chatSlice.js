@@ -33,9 +33,8 @@ export const chatSlice = createSlice({
       state.isLoading = true;
     },
     addBotMessage: (state, action) => {
-      // Remove loading message
       state.messages = state.messages.filter((msg) => !msg.isLoading);
-      // Add bot response
+
       state.messages.push({
         role: "model",
         message: action.payload,
@@ -44,9 +43,8 @@ export const chatSlice = createSlice({
       state.isLoading = false;
     },
     addErrorMessage: (state) => {
-      // Remove loading message
       state.messages = state.messages.filter((msg) => !msg.isLoading);
-      // Add error message
+
       state.messages.push({
         role: "model",
         message: "Erro ao enviar mensagem.",
