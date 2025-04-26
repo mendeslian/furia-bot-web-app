@@ -25,10 +25,10 @@ export default function HeroSection() {
           >
             Seja bem vindo!
           </h1>
-          <h2 className="text-white/90 text-lg font-medium">
-            Envie suas perguntas, tire dúvidas, converse com a gente e acompanhe
-            todas as novidades do cenário de CS2 e, claro, do melhor time do
-            Brasil! <i>#GoFURIA</i>
+          <h2 className="text-white/80 text-lg font-medium">
+            Fala com a gente no chat! Tire suas dúvidas, fique por dentro das
+            novidades do CS2 e acompanhe tudo sobre o time mais feroz do Brasil.{" "}
+            <i className="text-white">#GoFURIA</i>
           </h2>
         </div>
         <div className="flex gap-4">
