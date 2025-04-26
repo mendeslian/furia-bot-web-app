@@ -8,7 +8,7 @@ import FuriaTextLogo from "../../assets/furia-text-logo.svg";
 const linksTitleClass =
   "text-xs uppercase text-white font-semibold mb-4 tracking-wider text-center md:text-left";
 const linksItemClass =
-  "text-neutral-400 duration-200 hover:text-white text-xs leading-0";
+  "text-neutral-400 duration-200 hover:text-yellow-500 text-xs leading-0";
 
 export default function Footer() {
   return (
@@ -96,12 +96,12 @@ export default function Footer() {
             <a
               target="_blank"
               href="https://www.instagram.com/furiagg"
-              className="text-neutral-400 hover:text-white"
+              className="text-neutral-300 hover:text-yellow-500 group"
             >
               <Icon
                 icon="Instagram"
-                color="#FFFFFF"
-                className="duration-200 hover:opacity-70"
+                color="currentColor"
+                className="duration-200"
               />
             </a>
           </div>
