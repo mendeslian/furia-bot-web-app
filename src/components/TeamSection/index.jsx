@@ -8,9 +8,9 @@ const teamMembers = [
   {
     image: Fallen,
     name: "FalleN (Professor)",
-    role: ["In Game Leader", "Awper"],
+    role: ["In Game Leader"],
     description:
-      "Fallen é o AWP/IGL experiente da FURIA, liderando com estratégia e visão de jogo. Lenda do CS e peça fundamental para o time!",
+      "Fallen é o IGL experiente da FURIA, liderando com estratégia e visão de jogo. Lenda do CS e peça fundamental para o time!",
   },
   {
     image: Kscerato,
