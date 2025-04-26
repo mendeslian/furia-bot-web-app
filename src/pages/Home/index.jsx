@@ -3,6 +3,7 @@ import Chat from "../../components/Chat";
 import Header from "../../components/Header";
 import TeamSection from "../../components/TeamSection";
 import HeroSection from "../../components/HeroSection";
+import Footer from "../../components/Footer";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <HeroSection />
       <TeamSection />
       <Chat />
+      <Footer />
     </>
   );
 }
