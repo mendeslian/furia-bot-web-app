@@ -15,7 +15,7 @@ export default function TeamMember({ image, name, role, description }) {
           {role.map((role, index) => (
             <span
               key={index}
-              className="text-white/80 text-xs font-semibold bg-neutral-800 px-2 rounded-full flex items-center justify-center h-5 tracking-wider"
+              className="text-yellow-500 text-xs font-semibold bg-neutral-800 px-2 rounded-full flex items-center justify-center h-5 tracking-wider"
             >
               {role}
             </span>
