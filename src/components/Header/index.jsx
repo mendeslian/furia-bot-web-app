@@ -12,7 +12,7 @@ export default function Header() {
       link: "https://www.furia.gg",
     },
     {
-      id: "about",
+      id: "hltv",
       title: "HLTV",
       link: "https://www.hltv.org/team/8297/furia",
     },
