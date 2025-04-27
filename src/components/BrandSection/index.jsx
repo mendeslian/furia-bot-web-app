@@ -17,9 +17,9 @@ export default function BrandSection() {
   ];
 
   return (
-    <section className="w-full h-80 bg-radial from-white from-50% to-neutral-300 flex items-center border-y-1 border-neutral-700">
+    <section className="w-full h-60 bg-radial from-white from-50% to-neutral-300 flex items-center border-y-1 border-neutral-700">
       <div
-        className="w-full max-w-5xl h-20 mx-auto relative overflow-hidden"
+        className="w-full max-w-5xl h-16 mx-auto relative overflow-hidden"
         style={{
           maskImage:
             "linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0))",
