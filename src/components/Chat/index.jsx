@@ -148,7 +148,7 @@ export default function Chat() {
             juntos, construímos uma comunidade mais saudável.
           </p>
         </div>
-        <div className="w-full flex items-center gap-2">
+        <div className="w-full flex flex-col items-center gap-2 md:flex-row">
           <Icon icon="Bot" size={32} color="#FFFFFF" />
           <h2
             className="text-white/90 text-2xl font-bold text-center md:text-left"
