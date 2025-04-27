@@ -2,9 +2,6 @@ import FuriaLogo from "../../assets/furia-esports-logo.svg";
 import FuriaTextLogo from "../../assets/furia-text-logo.svg";
 
 export default function Header() {
-  const anchorClass =
-    "text-white/90 text-xs uppercase font-light tracking-[1px] cursor-pointer duration-500 relative px-1 hover:text-white";
-
   const headerOptions = [
     {
       id: "store",
@@ -22,6 +19,9 @@ export default function Header() {
       link: "https://liquipedia.net/counterstrike/FURIA",
     },
   ];
+
+  const anchorClass =
+    "text-white text-xs uppercase font-light tracking-[1px] cursor-pointer duration-200 relative px-1 hover:text-yellow-500";
 
   return (
     <header className="fixed top-0 left-0 w-full h-20 bg-neutral-900/50 backdrop-blur-sm z-50">
