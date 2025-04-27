@@ -39,7 +39,7 @@ export default function Header() {
             className="w-14 select-none opacity-90"
           />
         </div>
-        <nav aria-label="Main Navigation">
+        <nav aria-label="Navegação cabeçalho">
           <ul className="flex gap-2 sm:gap-6">
             {headerOptions.map((option) => (
               <li key={option.id}>
