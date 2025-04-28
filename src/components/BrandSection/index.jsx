@@ -16,8 +16,10 @@ export default function BrandSection() {
     PokerStars,
   ];
 
+  const brandsCount = brands.length;
+
   return (
-    <section className="w-full h-50 bg-radial from-white from-50% to-neutral-300 flex items-center border-y border-neutral-700 shadow-2xl">
+    <section className="w-full h-48 bg-radial from-white from-50% to-neutral-300 flex items-center border-y border-neutral-700 shadow-2xl">
       <div
         className="w-full max-w-5xl h-16 mx-auto relative overflow-hidden"
         style={{
@@ -31,7 +33,9 @@ export default function BrandSection() {
             className="w-40 h-16 scroll-animation"
             style={{
               left: "calc(200px * 6 )",
-              animationDelay: `calc(20s / 6 * (6 - ${index + 1}) * -1)`,
+              animationDelay: `calc(20s / ${brandsCount} * (${brandsCount} - ${
+                index + 1
+              }) * -1)`,
             }}
           >
             <img
