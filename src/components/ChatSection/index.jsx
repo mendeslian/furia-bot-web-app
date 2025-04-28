@@ -1,5 +1,6 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState, useMemo } from "react";
 import ReactMarkdown from "react-markdown";
+import { memo } from "react";
 
 // Components
 import Input from "../Input";
@@ -13,7 +14,7 @@ import { useChatLogic } from "../../hooks/useChatLogic";
 // Assets
 import FuriaLogo from "../../assets/furia-esports-logo.svg";
 
-function ChatHeader() {
+const ChatHeader = memo(function ChatHeader() {
   return (
     <header className="w-full h-16 py-4 px-6 flex items-center gap-4 border-b border-neutral-800 bg-[#0b0b0b] shadow-2xl">
       <img
@@ -28,9 +29,14 @@ function ChatHeader() {
       </span>
     </header>
   );
-}
+});
 
-function MessageCard({ role, message, isLoading, onCopy }) {
+const MessageCard = memo(function MessageCard({
+  role,
+  message,
+  isLoading,
+  onCopy,
+}) {
   const messageClasses =
     role === "user"
       ? "w-fit max-w-[90%] ml-auto bg-neutral-800 py-3 px-4 rounded-tl-lg rounded-br-lg rounded-bl-lg shadow-2xl"
@@ -83,9 +89,9 @@ function MessageCard({ role, message, isLoading, onCopy }) {
       )}
     </div>
   );
-}
+});
 
-function EmptyChat() {
+const EmptyChat = memo(function EmptyChat() {
   return (
     <div className="flex flex-col items-center justify-center py-2 m-auto">
       <p className="text-white/40 text-center text-sm">
@@ -93,9 +99,15 @@ function EmptyChat() {
       </p>
     </div>
   );
-}
+});
 
-function ChatInput({ value, onChange, onSend, isDisabled, inputRef }) {
+const ChatInput = memo(function ChatInput({
+  value,
+  onChange,
+  onSend,
+  isDisabled,
+  inputRef,
+}) {
   return (
     <div className="w-full h-18 p-4 flex items-center justify-center gap-4">
       <Input
@@ -123,14 +135,25 @@ function ChatInput({ value, onChange, onSend, isDisabled, inputRef }) {
       </button>
     </div>
   );
-}
+});
 
 export default function Chat() {
   const { message, setMessage, messages, isLoading, handleSend, handleCopy } =
     useChatLogic();
 
+  const [localMessage, setLocalMessage] = useState("");
+
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
+
+  const reversedMessages = useMemo(
+    () => messages.slice().reverse(),
+    [messages]
+  );
+
+  useEffect(() => {
+    setLocalMessage(message);
+  }, [message]);
 
   useEffect(() => {
     if (!isLoading && inputRef.current) {
@@ -150,8 +173,15 @@ export default function Chat() {
     }
   }, [messages]);
 
+  const handleLocalInputChange = (e) => {
+    setLocalMessage(e.target.value);
+  };
+
   const handleSendAndFocus = () => {
-    handleSend();
+    if (localMessage.trim()) {
+      setMessage(localMessage);
+      handleSend();
+    }
   };
 
   return (
@@ -174,23 +204,20 @@ export default function Chat() {
           {messages.length === 0 ? (
             <EmptyChat />
           ) : (
-            messages
-              .slice()
-              .reverse()
-              .map((msg, idx) => (
-                <MessageCard
-                  key={`${msg.role}-${msg.timestamp?.getTime() || idx}`}
-                  role={msg.role}
-                  message={msg}
-                  isLoading={msg.isLoading}
-                  onCopy={handleCopy}
-                />
-              ))
+            reversedMessages.map((msg, idx) => (
+              <MessageCard
+                key={`${msg.role}-${msg.timestamp?.getTime() || idx}`}
+                role={msg.role}
+                message={msg}
+                isLoading={msg.isLoading}
+                onCopy={handleCopy}
+              />
+            ))
           )}
         </div>
         <ChatInput
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
+          value={localMessage}
+          onChange={handleLocalInputChange}
           onSend={handleSendAndFocus}
           isDisabled={isLoading}
           inputRef={inputRef}
