@@ -12,7 +12,7 @@ const linksItemClass =
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-neutral-900 border-t-1 border-yellow-500 py-12">
+    <footer className="w-full bg-neutral-900 border-t-1 border-neutral-800 py-12 shadow-2xl">
       <div className="max-w-5xl w-full mx-auto flex flex-col gap-8 px-5  ">
         <div className="flex flex-col items-center md:flex-row md: justify-between gap-8 mb-12">
           <div className="max-w-xs">
@@ -20,7 +20,7 @@ export default function Footer() {
               <img
                 src={FuriaLogo}
                 alt="Logo ESPORTS Furia"
-                className="w-8 h-8 select-none"
+                className="w-10 h-10 bg-black/70 p-2 rounded-lg select-none"
                 draggable={false}
               />
               <img
