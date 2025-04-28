@@ -1,3 +1,4 @@
+import { useRef, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 
 // Components
@@ -13,7 +14,7 @@ import FuriaLogo from "../../assets/furia-esports-logo.svg";
 
 function ChatHeader() {
   return (
-    <header className="w-full h-18 py-4 px-6 flex items-center gap-4 border-b border-neutral-800 bg-[#0b0b0b] shadow-2xl">
+    <header className="w-full h-16 py-4 px-6 flex items-center gap-4 border-b border-neutral-800 bg-[#0b0b0b] shadow-2xl">
       <img
         src={FuriaLogo}
         alt="Logo ESPORTS Furia"
@@ -67,7 +68,7 @@ function MessageCard({ role, message, isLoading, onCopy }) {
           <Loader />
         </div>
       ) : (
-        <div className="text-sm font-normal text-white ">
+        <div className="text-sm font-normal text-white">
           <ReactMarkdown>{message.message}</ReactMarkdown>
           <div className="text-xs text-white/50 mt-2 text-right">
             {formattedDate}
@@ -90,9 +91,9 @@ function EmptyChat() {
 
 function ChatInput({ value, onChange, onSend, isDisabled }) {
   return (
-    <div className="w-full h-19 p-4 flex items-center justify-center gap-4">
+    <div className="w-full h-20 p-4 flex items-center justify-center gap-4">
       <Input
-        name="username"
+        name="message"
         value={value}
         onChange={onChange}
         placeholder="Digite sua mensagem aqui"
@@ -121,6 +122,20 @@ export default function Chat() {
   const { message, setMessage, messages, isLoading, handleSend, handleCopy } =
     useChatLogic();
 
+  const messagesEndRef = useRef(null);
+
+  useEffect(() => {
+    if (messagesEndRef.current) {
+      const chatContainer = messagesEndRef.current.parentElement;
+      chatContainer.style.scrollBehavior = "smooth";
+      chatContainer.scrollTop = 0;
+
+      return () => {
+        chatContainer.style.scrollBehavior = "auto";
+      };
+    }
+  }, [messages]);
+
   return (
     <section
       className="max-w-5xl w-full mx-auto min-h-screen flex flex-col items-start gap-6 px-5 py-20"
@@ -134,7 +149,8 @@ export default function Chat() {
       </div>
       <div className="w-full h-full rounded-xl overflow-hidden shadow-2xl border-1 border-neutral-800">
         <ChatHeader />
-        <div className="bg-neutral-900 w-full h-120 px-4 pb-6 sm:px-8 flex flex-col-reverse gap-8 overflow-y-auto">
+        <div className="bg-neutral-900 w-full h-120 px-4  sm:px-8 flex flex-col-reverse gap-8 overflow-y-auto">
+          <div ref={messagesEndRef} />
           {messages.length === 0 ? (
             <EmptyChat />
           ) : (
@@ -143,7 +159,7 @@ export default function Chat() {
               .reverse()
               .map((msg, idx) => (
                 <MessageCard
-                  key={idx}
+                  key={`${msg.role}-${msg.timestamp?.getTime() || idx}`}
                   role={msg.role}
                   message={msg}
                   isLoading={msg.isLoading}
