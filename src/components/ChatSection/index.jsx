@@ -91,7 +91,7 @@ function EmptyChat() {
 
 function ChatInput({ value, onChange, onSend, isDisabled }) {
   return (
-    <div className="w-full h-20 p-4 flex items-center justify-center gap-4">
+    <div className="w-full h-18 p-4 flex items-center justify-center gap-4">
       <Input
         name="message"
         value={value}

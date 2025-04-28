@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from "uuid";
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -18,9 +19,11 @@ export const chatSlice = createSlice({
     },
     addUserMessage: (state, action) => {
       state.messages.push({
+        id: uuidv4(),
         role: "user",
         message: action.payload,
         parts: [{ text: action.payload }],
+        timestamp: new Date(),
       });
     },
     addLoadingMessage: (state) => {
