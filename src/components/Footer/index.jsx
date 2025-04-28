@@ -87,7 +87,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <hr className="border-neutral-800" />
+        <hr className="border-neutral-900" />
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-neutral-400 text-xs">
             © 2024 Furia. All Rights Reserved.
