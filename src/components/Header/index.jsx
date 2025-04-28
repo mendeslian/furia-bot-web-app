@@ -40,7 +40,7 @@ export default function Header() {
   ];
 
   const anchorClass =
-    "text-white text-xs uppercase font-light tracking-[1px] cursor-pointer duration-200 relative px-1 hover:text-yellow-500";
+    "text-white text-xs uppercase font-light tracking-[1px] cursor-pointer duration-200 px-1 hover:text-yellow-500";
 
   return (
     <header
