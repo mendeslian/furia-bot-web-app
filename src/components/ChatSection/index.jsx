@@ -149,7 +149,7 @@ export default function Chat() {
       </div>
       <div className="w-full h-full rounded-xl overflow-hidden shadow-2xl border-1 border-neutral-800">
         <ChatHeader />
-        <div className="bg-neutral-900 w-full h-120 px-4  sm:px-8 flex flex-col-reverse gap-8 overflow-y-auto">
+        <div className="bg-neutral-900 w-full h-120 px-4 pt-6 sm:px-8 flex flex-col-reverse gap-8 overflow-y-auto">
           <div ref={messagesEndRef} />
           {messages.length === 0 ? (
             <EmptyChat />
