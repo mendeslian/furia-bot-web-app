@@ -90,7 +90,6 @@ export function useChatLogic() {
 
   return {
     message,
-    setMessage,
     messages,
     isLoading,
     handleSend,

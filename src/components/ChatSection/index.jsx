@@ -138,7 +138,7 @@ const ChatInput = memo(function ChatInput({
 });
 
 export default function Chat() {
-  const { message, setMessage, messages, isLoading, handleSend, handleCopy } =
+  const { message, messages, isLoading, handleSend, handleCopy } =
     useChatLogic();
 
   const [localMessage, setLocalMessage] = useState("");
