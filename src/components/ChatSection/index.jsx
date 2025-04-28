@@ -13,7 +13,7 @@ import FuriaLogo from "../../assets/furia-esports-logo.svg";
 
 function ChatHeader() {
   return (
-    <header className="w-full h-18 py-4 px-6 flex items-center gap-4 border-b border-neutral-700">
+    <header className="w-full h-18 py-4 px-6 flex items-center gap-4 border-b border-neutral-800 bg-[#0b0b0b] shadow-2xl">
       <img
         src={FuriaLogo}
         alt="Logo ESPORTS Furia"
@@ -31,8 +31,8 @@ function ChatHeader() {
 function MessageCard({ role, message, isLoading, onCopy }) {
   const messageClasses =
     role === "user"
-      ? "w-fit max-w-[90%] ml-auto bg-white/10 py-3 px-4 rounded-tl-lg rounded-br-lg rounded-bl-lg shadow-2xl"
-      : "w-fit max-w-[90%] bg-neutral-900 py-3 px-4 rounded-tr-lg rounded-br-lg rounded-bl-lg shadow-2xl";
+      ? "w-fit max-w-[90%] ml-auto bg-neutral-800 py-3 px-4 rounded-tl-lg rounded-br-lg rounded-bl-lg shadow-2xl"
+      : "w-fit max-w-[90%] bg-[#0b0b0b] py-3 px-4 rounded-tr-lg rounded-br-lg rounded-bl-lg shadow-2xl";
 
   const timestamp = message.timestamp || new Date();
   const formattedDate = timestamp.toLocaleString("pt-BR", {
@@ -90,7 +90,7 @@ function EmptyChat() {
 
 function ChatInput({ value, onChange, onSend, isDisabled }) {
   return (
-    <div className="w-full h-19 py-4 px-6 flex items-center justify-center gap-4 border-t border-neutral-700">
+    <div className="w-full h-19 p-4 flex items-center justify-center gap-4">
       <Input
         name="username"
         value={value}
@@ -132,9 +132,9 @@ export default function Chat() {
           Comece a conversar agora!
         </h2>
       </div>
-      <div className="w-full h-full rounded-lg overflow-hidden border-1 border-neutral-700 shadow-2xl ">
+      <div className="w-full h-full rounded-xl overflow-hidden shadow-2xl border-1 border-neutral-800">
         <ChatHeader />
-        <div className="bg-neutral-800 w-full h-120 px-6 flex flex-col-reverse gap-8 p-8 overflow-y-auto">
+        <div className="bg-neutral-900 w-full h-120 px-6 flex flex-col-reverse gap-8 p-8 overflow-y-auto">
           {messages.length === 0 ? (
             <EmptyChat />
           ) : (
