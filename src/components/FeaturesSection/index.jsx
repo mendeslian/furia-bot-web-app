@@ -41,28 +41,28 @@ export default function Features() {
 
       <div className="max-w-5xl w-full mx-auto px-5 relative z-10">
         <h2 className="text-3xl font-bold text-white text-center mb-4">
-          Como funciona
+          Como funciona?
         </h2>
-        <p className="text-neutral-400 text-center mb-16 max-w-xl mx-auto">
+        <p className="text-neutral-400 text-center font-semibold mb-16 max-w-xl mx-auto tracking-wide">
           Conheça as principais funcionalidades do Furia BOT e como ele pode te
           ajudar a melhorar no CS2
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-          <div className="hidden md:block absolute top-8 left-1/6 right-1/6 h-[1px] bg-yellow-500 z-0"></div>
+          <div className="hidden md:block absolute top-8 left-1/6 right-1/6 h-[1px] bg-yellow-600 z-0 "></div>
 
           {features.map((feature) => (
             <div
               key={feature.id}
               className="flex flex-col items-center text-center relative z-10"
             >
-              <div className="w-16 h-16 rounded-full bg-yellow-500 flex items-center justify-center mb-6 shadow-2xl">
-                <Icon icon={feature.icon} size={24} color="#000000" />
+              <div className="w-16 h-16 rounded-full bg-yellow-500 flex items-center justify-center mb-6 shadow-[0_0_15px_rgba(234,179,8,0.5)] ">
+                <Icon icon={feature.icon} size={24} />
               </div>
               <h3 className="text-xl font-bold text-white mb-3">
                 {feature.title}
               </h3>
-              <p className="text-neutral-400 text-sm px-4">
+              <p className="text-neutral-400 text-sm font-semibold px-4">
                 {feature.description}
               </p>
             </div>
