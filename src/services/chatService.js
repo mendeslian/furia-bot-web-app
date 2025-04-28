@@ -10,7 +10,6 @@ const API_URL = import.meta.env.VITE_API_URL;
  */
 async function sendMessage(message, history) {
   try {
-    // Add timeout to prevent hanging requests
     const { data } = await axios.post(`${API_URL}/chat/send`, {
       message,
       history,

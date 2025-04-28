@@ -54,12 +54,17 @@ function MessageCard({ role, message, isLoading, onCopy }) {
           </span>
           {!isLoading && (
             <button
-              title="Copiar mensagem"
-              className="cursor-pointer duration-200 hover:opacity-50"
+              title="Copiar"
+              className="text-white hover:text-yellow-500 duration-200 cursor-pointer"
               onClick={() => onCopy(message.message)}
-              aria-label="Copiar mensagem"
+              aria-label="Copiar"
             >
-              <Icon icon="Copy" size={16} color="white" />
+              <Icon
+                icon="Copy"
+                size={16}
+                color="currentColor"
+                className="duration-200"
+              />
             </button>
           )}
         </div>
@@ -90,7 +95,7 @@ function EmptyChat() {
   );
 }
 
-function ChatInput({ value, onChange, onSend, isDisabled }) {
+function ChatInput({ value, onChange, onSend, isDisabled, inputRef }) {
   return (
     <div className="w-full h-18 p-4 flex items-center justify-center gap-4">
       <Input
@@ -102,9 +107,10 @@ function ChatInput({ value, onChange, onSend, isDisabled }) {
           if (e.key === "Enter") onSend();
         }}
         disabled={isDisabled}
+        ref={inputRef}
       />
       <button
-        title={value === "" ? "Escreva uma mensagem" : "Clique para enviar"}
+        title={value === "" ? "Escreva uma mensagem" : "Enviar"}
         className="w-14 h-10 flex justify-center items-center bg-[#0b0b0b] duration-200 rounded cursor-pointer shadow-2xl hover:bg-neutral-800 disabled:cursor-default disabled:bg-neutral-600 disabled:opacity-50"
         onClick={onSend}
         disabled={isDisabled || !value.trim() || value === ""}
@@ -124,6 +130,13 @@ export default function Chat() {
     useChatLogic();
 
   const messagesEndRef = useRef(null);
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    if (!isLoading && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [isLoading]);
 
   useEffect(() => {
     if (messagesEndRef.current) {
@@ -136,6 +149,10 @@ export default function Chat() {
       };
     }
   }, [messages]);
+
+  const handleSendAndFocus = () => {
+    handleSend();
+  };
 
   return (
     <section
@@ -172,8 +189,9 @@ export default function Chat() {
         <ChatInput
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          onSend={handleSend}
+          onSend={handleSendAndFocus}
           isDisabled={isLoading}
+          inputRef={inputRef}
         />
       </div>
     </section>
