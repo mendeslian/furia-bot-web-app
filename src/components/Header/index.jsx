@@ -60,6 +60,7 @@ export default function Header() {
             src={FuriaTextLogo}
             alt="Furia ESPORTS Text Logo"
             className="w-14 select-none opacity-90"
+            draggable={false}
           />
         </div>
         <nav aria-label="Navegação cabeçalho">
