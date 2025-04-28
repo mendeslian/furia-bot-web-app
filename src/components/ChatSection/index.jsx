@@ -160,7 +160,9 @@ export default function Chat() {
       id="chat"
     >
       <div className="w-full flex flex-col items-center gap-2 md:flex-row">
-        <Icon icon="Bot" size={32} color="#FFFFFF" />
+        <div className="hidden md:block">
+          <Icon icon="Bot" size={32} color="#FFFFFF" />
+        </div>
         <h2 className="text-white/90 text-2xl font-bold text-center md:text-left">
           Comece a conversar agora!
         </h2>
