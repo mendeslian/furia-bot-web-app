@@ -20,7 +20,7 @@ export default function Footer() {
               <img
                 src={FuriaLogo}
                 alt="Logo ESPORTS Furia"
-                className="w-10 h-10 bg-black/70 p-2 rounded-lg select-none"
+                className="w-10 h-10 bg-black p-2 rounded-lg select-none"
                 draggable={false}
               />
               <img
