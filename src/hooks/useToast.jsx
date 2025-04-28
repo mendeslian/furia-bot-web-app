@@ -7,7 +7,7 @@ export function useToast() {
     description = ""
   ) => {
     const content = (
-      <div className="font-['Space_Grotesk']">
+      <div>
         <p className="font-bold text-base">{title}</p>
         {description && (
           <p className="text-sm mt-0.5 opacity-90">{description}</p>
@@ -15,28 +15,21 @@ export function useToast() {
       </div>
     );
 
-    const options = {
-      className: "toast-custom-container",
-      style: {
-        borderRadius: "8px",
-      },
-    };
-
     switch (type) {
       case "success":
-        toast.success(content, options);
+        toast.success(content);
         break;
       case "error":
-        toast.error(content, options);
+        toast.error(content);
         break;
       case "info":
-        toast.info(content, options);
+        toast.info(content);
         break;
       case "warning":
-        toast.warning(content, options);
+        toast.warning(content);
         break;
       default:
-        toast(content, options);
+        toast(content);
     }
   };
 
