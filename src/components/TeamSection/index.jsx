@@ -30,7 +30,7 @@ const teamMembers = [
 
 export default function TeamSection() {
   return (
-    <section className="w-full min-h-150 bg-radial from-neutral-800 from-20% to-neutral-900 py-20 border-y-1 border-neutral-800 ">
+    <section className="w-full min-h-150 bg-radial from-neutral-800 from-20% to-neutral-900 py-20 ">
       <div className="max-w-5xl h-full mx-auto flex flex-col items-start gap-6 px-5">
         <div className="w-full flex flex-col items-center justify-center gap-2">
           <h2 className="text-3xl font-bold text-white">
