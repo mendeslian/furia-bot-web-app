@@ -142,6 +142,7 @@ export default function Chat() {
     useChatLogic();
 
   const [localMessage, setLocalMessage] = useState("");
+  const [initialRenderComplete, setInitialRenderComplete] = useState(false);
 
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
@@ -152,14 +153,22 @@ export default function Chat() {
   );
 
   useEffect(() => {
-    setLocalMessage(message);
-  }, [message]);
+    const timer = setTimeout(() => {
+      setInitialRenderComplete(true);
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
+    setLocalMessage(message);
+
     if (!isLoading && inputRef.current) {
+      const scrollPos = window.scrollY;
       inputRef.current.focus();
+      window.scrollTo(0, scrollPos);
     }
-  }, [isLoading]);
+  }, [message, isLoading]);
 
   useEffect(() => {
     if (messagesEndRef.current) {
