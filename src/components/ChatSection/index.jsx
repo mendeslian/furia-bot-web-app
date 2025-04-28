@@ -81,7 +81,7 @@ function MessageCard({ role, message, isLoading, onCopy }) {
 
 function EmptyChat() {
   return (
-    <div className="w-80 flex flex-col items-center justify-center py-2 m-auto">
+    <div className="flex flex-col items-center justify-center py-2 m-auto">
       <p className="text-white/40 text-center text-sm">
         Para começar digite uma mensagem abaixo e aperte o botão para enviar
       </p>
@@ -104,7 +104,7 @@ function ChatInput({ value, onChange, onSend, isDisabled }) {
       />
       <button
         title={value === "" ? "Escreva uma mensagem" : "Clique para enviar"}
-        className="w-12 h-10 flex justify-center items-center bg-zinc-800 duration-200 rounded cursor-pointer hover:bg-neutral-700 disabled:cursor-default disabled:bg-neutral-500 disabled:opacity-50"
+        className="w-14 h-10 flex justify-center items-center bg-[#0b0b0b] duration-500 rounded cursor-pointer shadow-2xl hover:bg-neutral-800 disabled:cursor-default disabled:bg-neutral-600 disabled:opacity-50"
         onClick={onSend}
         disabled={isDisabled || !value.trim() || value === ""}
       >
