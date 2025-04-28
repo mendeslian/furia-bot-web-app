@@ -12,7 +12,7 @@ const linksItemClass =
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-neutral-900 border-t-1 border-neutral-800 py-12 shadow-2xl">
+    <footer className="w-full bg-neutral-900 border-t-2 border-neutral-800 py-12 shadow-2xl">
       <div className="max-w-5xl w-full mx-auto flex flex-col gap-8 px-5  ">
         <div className="flex flex-col items-center md:flex-row md: justify-between gap-8 mb-12">
           <div className="max-w-xs">
