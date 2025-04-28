@@ -13,8 +13,8 @@ const linksItemClass =
 export default function Footer() {
   return (
     <footer className="w-full bg-[#0b0b0b] border-t border-neutral-800 py-12 shadow-2xl">
-      <div className="max-w-5xl w-full mx-auto flex flex-col gap-8 px-5  ">
-        <div className="flex flex-col items-center md:flex-row md: justify-between gap-8 mb-12">
+      <div className="max-w-5xl w-full mx-auto flex flex-col gap-8 px-5">
+        <div className="flex flex-col items-center md:flex-row md:justify-between gap-8 mb-12">
           <div className="max-w-xs">
             <div className="flex items-center justify-center md:justify-start gap-2 mb-3">
               <img
@@ -46,6 +46,7 @@ export default function Footer() {
                     target="_blank"
                     href="https://www.furia.gg/quem-somos"
                     className={linksItemClass}
+                    rel="noopener noreferrer"
                   >
                     Quem somos
                   </a>
@@ -55,6 +56,7 @@ export default function Footer() {
                     target="_blank"
                     href="https://www.furia.gg/faq"
                     className={linksItemClass}
+                    rel="noopener noreferrer"
                   >
                     FAQ
                   </a>
@@ -64,12 +66,13 @@ export default function Footer() {
 
             <div>
               <h3 className={linksTitleClass}>Políticas</h3>
-              <ul className="flex flex-col">
+              <ul className="flex flex-col text-center md:text-left">
                 <li>
                   <a
                     target="_blank"
                     href="https://www.furia.gg/termos-condicoes"
                     className={linksItemClass}
+                    rel="noopener noreferrer"
                   >
                     Termos e condições
                   </a>
@@ -79,6 +82,7 @@ export default function Footer() {
                     target="_blank"
                     href="https://www.furia.gg/politica-privacidade"
                     className={linksItemClass}
+                    rel="noopener noreferrer"
                   >
                     Política de privacidade
                   </a>
@@ -97,9 +101,24 @@ export default function Footer() {
               target="_blank"
               href="https://www.instagram.com/furiagg"
               className="text-neutral-300 hover:text-yellow-500 group"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
             >
               <Icon
                 icon="Instagram"
+                color="currentColor"
+                className="duration-200"
+              />
+            </a>
+            <a
+              target="_blank"
+              href="https://x.com/FURIA"
+              className="text-neutral-300 hover:text-yellow-500 group"
+              rel="noopener noreferrer"
+              aria-label="Twitter"
+            >
+              <Icon
+                icon="Twitter"
                 color="currentColor"
                 className="duration-200"
               />
