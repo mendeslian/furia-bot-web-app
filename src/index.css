@@ -48,21 +48,21 @@ h6 {
 
 ::-webkit-scrollbar {
   width: 2px;
-  background: #242424;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #454545;
+  background: #2a2a2a;
   border-radius: 20px;
-  border: 2px solid #242424;
+  border: 2px solid transparent;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #454545;
+  background: #2a2a2a;
 }
 
 ::-webkit-scrollbar-corner {
-  background: #242424;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-button {
@@ -71,7 +71,7 @@ h6 {
 
 html {
   scrollbar-width: 1px;
-  scrollbar-color: #454545 #242424;
+  scrollbar-color: #2a2a2a transparent;
 }
 
 @keyframes scrollLeft {
