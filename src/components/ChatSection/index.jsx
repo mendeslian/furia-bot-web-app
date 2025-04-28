@@ -5,6 +5,7 @@ import ReactMarkdown from "react-markdown";
 import Input from "../Input";
 import Icon from "../icon";
 import Loader from "../Loader";
+import TextLoader from "../TextLoader";
 
 // Hooks
 import { useChatLogic } from "../../hooks/useChatLogic";
@@ -65,7 +66,7 @@ function MessageCard({ role, message, isLoading, onCopy }) {
       )}
       {isLoading ? (
         <div className="flex items-center justify-center py-2">
-          <Loader />
+          <TextLoader color="#efb100" />
         </div>
       ) : (
         <div className="text-sm font-normal text-white">
