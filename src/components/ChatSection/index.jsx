@@ -1,7 +1,7 @@
 import ReactMarkdown from "react-markdown";
 
 // Components
-import Input from "../../components/Input";
+import Input from "../Input";
 import Icon from "../icon";
 import Loader from "../Loader";
 
@@ -122,41 +122,15 @@ export default function Chat() {
     useChatLogic();
 
   return (
-    <section className="max-w-5xl w-full mx-auto min-h-screen flex flex-col items-start gap-6 px-5 py-20">
-      <div className="w-full">
-        <h1 className="text-white text-3xl font-bold mb-10">
-          Seu novo squad no CS2
-        </h1>
-        <div className="w-full flex flex-col">
-          <p className="text-white font-normal bg-neutral-800 w-fit max-w-lg px-4 py-2 rounded-tr-md rounded-br-md rounded-bl-md shadow-2xl mb-4">
-            Já pensou ter um especialista em CS2 disponível 24 horas por dia, na
-            palma da sua mão?
-          </p>
-          <p className="text-white font-normal bg-neutral-700 w-fit max-w-md px-4 py-2 text-right rounded-tl-md rounded-br-md rounded-bl-md ml-auto shadow-2xl mb-4">
-            Um especialista em CS2 disponível 24 horas por dia!?
-          </p>
-          <p className="text-white font-normal bg-neutral-800 w-fit max-w-md px-4 py-2 rounded-tr-md rounded-br-md rounded-bl-md shadow-2xl mb-4">
-            Isso mesmo. Agora você tem!!
-          </p>
-          <p className="text-white font-normal bg-neutral-800 w-fit max-w-2xl px-4 py-2 rounded-tr-md rounded-br-md rounded-bl-md shadow-2xl mb-4">
-            Apresentamos o <strong>Furia BOT</strong> seu novo aliado dentro e
-            fora do servidor. Ele é seu assistente virtual para tudo sobre o
-            mundo do CS. Mande suas perguntas e receba respostas na hora.
-          </p>
-          <p className="text-white font-normal bg-neutral-800 w-fit max-w-xl px-4 py-2 rounded-tr-md rounded-br-md rounded-bl-md shadow-2xl mb-10">
-            Ah, e lembre-se respeito e educação são o headshot da convivência:
-            juntos, construímos uma comunidade mais saudável.
-          </p>
-        </div>
-        <div className="w-full flex flex-col items-center gap-2 md:flex-row">
-          <Icon icon="Bot" size={32} color="#FFFFFF" />
-          <h2
-            className="text-white/90 text-2xl font-bold text-center md:text-left"
-            id="chat"
-          >
-            Comece a conversar agora!
-          </h2>
-        </div>
+    <section
+      className="max-w-5xl w-full mx-auto min-h-screen flex flex-col items-start gap-6 px-5 py-20"
+      id="chat"
+    >
+      <div className="w-full flex flex-col items-center gap-2 md:flex-row">
+        <Icon icon="Bot" size={32} color="#FFFFFF" />
+        <h2 className="text-white/90 text-2xl font-bold text-center md:text-left">
+          Comece a conversar agora!
+        </h2>
       </div>
       <div className="w-full h-full rounded-lg overflow-hidden border-1 border-neutral-700 shadow-2xl ">
         <ChatHeader />
