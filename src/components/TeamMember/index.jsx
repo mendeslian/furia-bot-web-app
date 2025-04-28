@@ -1,6 +1,6 @@
 export default function TeamMember({ image, name, role, description }) {
   return (
-    <article className="w-110 bg-neutral-900 flex flex-col justify-center items-center gap-4 rounded-md py-4 px-8 duration-300 hover:scale-105 border-2 border-transparent hover:border-yellow-500 hover:shadow-2xl sm:flex-row sm:h-60 sm:items-start">
+    <article className="w-110 bg-neutral-900 flex flex-col justify-center items-center gap-4 rounded-md py-4 px-8 duration-300 hover:scale-101 border-2 border-transparent hover:border-yellow-500 hover:shadow-2xl sm:flex-row sm:h-60 sm:items-start">
       <img
         src={image}
         alt={name}
