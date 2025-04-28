@@ -104,7 +104,7 @@ function ChatInput({ value, onChange, onSend, isDisabled }) {
       />
       <button
         title={value === "" ? "Escreva uma mensagem" : "Clique para enviar"}
-        className="w-14 h-10 flex justify-center items-center bg-[#0b0b0b] duration-500 rounded cursor-pointer shadow-2xl hover:bg-neutral-800 disabled:cursor-default disabled:bg-neutral-600 disabled:opacity-50"
+        className="w-14 h-10 flex justify-center items-center bg-[#0b0b0b] duration-200 rounded cursor-pointer shadow-2xl hover:bg-neutral-800 disabled:cursor-default disabled:bg-neutral-600 disabled:opacity-50"
         onClick={onSend}
         disabled={isDisabled || !value.trim() || value === ""}
       >
