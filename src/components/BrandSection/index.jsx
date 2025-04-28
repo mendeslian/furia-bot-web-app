@@ -8,12 +8,12 @@ import PokerStars from "../../assets/brands/pokerstars.svg";
 
 export default function BrandSection() {
   const brands = [
-    Adidas,
-    CruzeiroDoSul,
-    RedBull,
-    HellManns,
-    Lenovo,
-    PokerStars,
+    { alt: "Adidas Logo", path: Adidas },
+    { alt: "Cruzeiro Do Sul Logo", path: CruzeiroDoSul },
+    { alt: "Red Bull Logo", path: RedBull },
+    { alt: "HellManns Logo", path: HellManns },
+    { alt: "Lenovo Logo", path: Lenovo },
+    { alt: "PokerStars Logo", path: PokerStars },
   ];
 
   const brandsCount = brands.length;
@@ -39,8 +39,8 @@ export default function BrandSection() {
             }}
           >
             <img
-              src={brand}
-              alt="Brand"
+              src={brand.path}
+              alt={brand.alt}
               draggable={false}
               className="w-full h-full select-none object-contain"
             />
