@@ -81,10 +81,10 @@ export function useChatLogic() {
     navigator.clipboard
       .writeText(textToCopy)
       .then(() => {
-        toast.success("Furia BOT disse", "Mensagem copiada com sucesso");
+        toast.success("Mensagem copiada com sucesso");
       })
       .catch(() => {
-        toast.error("Furia BOT disse", "Não foi possível copiar a mensagem");
+        toast.error("Não foi possível copiar a mensagem");
       });
   }
 
