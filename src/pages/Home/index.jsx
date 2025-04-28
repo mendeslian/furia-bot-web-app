@@ -1,9 +1,11 @@
 // Components
-import Chat from "../../components/Chat";
+import ChatSection from "../../components/ChatSection";
 import Header from "../../components/Header";
 import TeamSection from "../../components/TeamSection";
 import HeroSection from "../../components/HeroSection";
 import BrandSection from "../../components/BrandSection";
+import FeaturesSection from "../../components/FeaturesSection";
+
 import Footer from "../../components/Footer";
 
 export default function Home() {
@@ -13,7 +15,8 @@ export default function Home() {
       <HeroSection />
       <BrandSection />
       <TeamSection />
-      <Chat />
+      <FeaturesSection />
+      <ChatSection />
       <Footer />
     </>
   );
