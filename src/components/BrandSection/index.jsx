@@ -17,7 +17,7 @@ export default function BrandSection() {
   ];
 
   return (
-    <section className="w-full h-50 bg-radial from-white from-50% to-neutral-300 flex items-center border-y-1 border-neutral-700 shadow-2xl">
+    <section className="w-full h-50 bg-radial from-white from-50% to-neutral-300 flex items-center border-y border-neutral-700 shadow-2xl">
       <div
         className="w-full max-w-5xl h-16 mx-auto relative overflow-hidden"
         style={{
