@@ -188,8 +188,7 @@ export default function Chat() {
 
   const handleSendAndFocus = () => {
     if (localMessage.trim()) {
-      setMessage(localMessage);
-      handleSend();
+      handleSend(localMessage);
     }
   };
 

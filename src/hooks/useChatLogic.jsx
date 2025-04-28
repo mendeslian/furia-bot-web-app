@@ -51,10 +51,10 @@ export function useChatLogic() {
 
   const isLoading = mutation.isPending || mutation.isLoading;
 
-  function handleSend() {
-    if (message.trim() && !isLoading) {
-      const currentMessage = message;
+  function handleSend(messageToSend = message) {
+    const currentMessage = messageToSend.trim();
 
+    if (currentMessage && !isLoading) {
       setMessage("");
 
       setMessages((prev) => [
