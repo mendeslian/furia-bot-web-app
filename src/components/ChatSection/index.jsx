@@ -61,15 +61,14 @@ const MessageCard = memo(function MessageCard({
           {!isLoading && (
             <button
               title="Copiar"
-              className="text-white hover:text-yellow-500 duration-200 cursor-pointer"
+              className="group text-white duration-200 cursor-pointer"
               onClick={() => onCopy(message.message)}
               aria-label="Copiar"
             >
               <Icon
                 icon="Copy"
                 size={16}
-                color="currentColor"
-                className="duration-200"
+                className="duration-200 text-white group-hover:text-yellow-500"
               />
             </button>
           )}

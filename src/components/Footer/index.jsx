@@ -100,27 +100,25 @@ export default function Footer() {
             <a
               target="_blank"
               href="https://www.instagram.com/furiagg"
-              className="text-neutral-300 hover:text-yellow-500 group"
+              className="group text-neutral-300 hover:text-yellow-500"
               rel="noopener noreferrer"
               aria-label="Instagram"
             >
               <Icon
                 icon="Instagram"
-                color="currentColor"
-                className="duration-200"
+                className="duration-200 text-neutral-300 group-hover:text-yellow-500"
               />
             </a>
             <a
               target="_blank"
               href="https://x.com/FURIA"
-              className="text-neutral-300 hover:text-yellow-500 group"
+              className="group text-neutral-300 hover:text-yellow-500"
               rel="noopener noreferrer"
               aria-label="Twitter"
             >
               <Icon
                 icon="Twitter"
-                color="currentColor"
-                className="duration-200"
+                className="duration-200 text-neutral-300 group-hover:text-yellow-500"
               />
             </a>
           </div>
