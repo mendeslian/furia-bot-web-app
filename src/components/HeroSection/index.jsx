@@ -34,7 +34,7 @@ export default function HeroSection() {
         <div className="flex gap-4">
           <a
             href="#chat"
-            className="h-10 flex items-center justify-center text-lg gap-2 px-4 rounded-sm cursor-pointer duration-200 drop-shadow-md text-md font-semibold disabled:cursor-default bg-neutral-50 hover:bg-neutral-50/80 disabled:bg-neutral-300 text-neutral-900"
+            className="h-10 flex items-center justify-center text-lg gap-2 px-4 rounded-sm cursor-pointer duration-200 drop-shadow-md text-md font-semibold disabled:cursor-default bg-neutral-50 hover:bg-neutral-50/80 disabled:bg-neutral-300 text-neutral-900 shadow-2xl"
             aria-label="Começar a conversar com o Furia BOT"
           >
             Começar agora
