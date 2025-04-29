@@ -126,22 +126,22 @@ const EmptyChat = memo(function EmptyChat({ setMessage }) {
     {
       icon: "Users",
       title: "Line Up",
-      suggestion: "Qual é a line-up atual da furia?",
+      suggestion: "Qual é a line-up atual da FURIA?",
     },
     {
       icon: "Gamepad2",
       title: "Próximos jogos",
-      suggestion: "Qual é o calendário de jogos da furia em 2025?",
+      suggestion: "Qual é o calendário de jogos da FURIA em 2025?",
     },
     {
       icon: "Calendar",
       title: "Atualizações",
-      suggestion: "Quais são as últimas atualizações da furia?",
+      suggestion: "Quais são as últimas atualizações da FURIA?",
     },
     {
-      icon: "Medal",
-      title: "Ranking",
-      suggestion: "Qual é o ranking atual da furia?",
+      icon: "Globe",
+      title: "Redes sociais",
+      suggestion: "Quais são as redes sociais da FURIA?",
     },
   ];
   return (
