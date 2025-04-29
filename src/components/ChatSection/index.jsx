@@ -94,14 +94,14 @@ const ChatSuggestion = memo(function ChatSuggestion({
   icon,
   title,
   suggestion,
-  setMessage,
+  handleSend,
 }) {
   return (
     <button
       title="Selecionar mensagem"
       className="group w-full h-20 flex flex-col gap-1 p-3 bg-neutral-800 rounded-lg duration-200 shadow-2xl cursor-pointer md:max-w-70 hover:bg-neutral-700"
       onClick={() => {
-        setMessage(suggestion);
+        handleSend(suggestion);
       }}
     >
       <div className="flex items-center gap-2">
@@ -121,7 +121,7 @@ const ChatSuggestion = memo(function ChatSuggestion({
   );
 });
 
-const EmptyChat = memo(function EmptyChat({ setMessage }) {
+const EmptyChat = memo(function EmptyChat({ handleSend }) {
   const suggestions = [
     {
       icon: "Users",
@@ -158,7 +158,7 @@ const EmptyChat = memo(function EmptyChat({ setMessage }) {
               icon={sugestion.icon}
               title={sugestion.title}
               suggestion={sugestion.suggestion}
-              setMessage={setMessage}
+              handleSend={handleSend}
             />
           );
         })}
@@ -209,7 +209,7 @@ const ChatInput = memo(function ChatInput({
 });
 
 export default function Chat() {
-  const { message, messages, setMessage, isLoading, handleSend, handleCopy } =
+  const { message, messages, isLoading, handleSend, handleCopy } =
     useChatLogic();
 
   const [localMessage, setLocalMessage] = useState("");
@@ -281,7 +281,7 @@ export default function Chat() {
         <div className="bg-neutral-900 w-full h-120 px-4 pt-6 sm:px-8 flex flex-col-reverse gap-8 overflow-y-auto">
           <div ref={messagesEndRef} />
           {messages.length === 0 ? (
-            <EmptyChat setMessage={setMessage} />
+            <EmptyChat handleSend={handleSend} />
           ) : (
             reversedMessages.map((msg, idx) => (
               <MessageCard
