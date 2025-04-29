@@ -11,6 +11,28 @@ const linksItemClass =
   "text-neutral-400 duration-200 hover:text-yellow-500 text-xs leading-0";
 
 export default function Footer() {
+  const socials = [
+    {
+      icon: "Facebook",
+      link: "https://www.facebook.com/furiagg",
+      ariaLabel: "Facebook",
+    },
+    {
+      icon: "Instagram",
+      link: "https://www.instagram.com/furiagg",
+      ariaLabel: "Instagram",
+    },
+    {
+      icon: "Twitter",
+      link: "https://x.com/FURIA",
+      ariaLabel: "X",
+    },
+    {
+      icon: "Twitch",
+      link: "https://www.twitch.tv/furiatv",
+      ariaLabel: "Twitch",
+    },
+  ];
   return (
     <footer className="w-full bg-[#0b0b0b] border-t border-neutral-800 py-12 shadow-2xl">
       <div className="max-w-5xl w-full mx-auto flex flex-col gap-8 px-5">
@@ -97,30 +119,23 @@ export default function Footer() {
             © 2025 Furia. All Rights Reserved.
           </p>
           <div className="flex gap-4 mt-4 md:mt-0">
-            <a
-              target="_blank"
-              href="https://www.instagram.com/furiagg"
-              className="group text-neutral-300 hover:text-yellow-500"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-            >
-              <Icon
-                icon="Instagram"
-                className="duration-200 text-neutral-300 group-hover:text-yellow-500"
-              />
-            </a>
-            <a
-              target="_blank"
-              href="https://x.com/FURIA"
-              className="group text-neutral-300 hover:text-yellow-500"
-              rel="noopener noreferrer"
-              aria-label="Twitter"
-            >
-              <Icon
-                icon="Twitter"
-                className="duration-200 text-neutral-300 group-hover:text-yellow-500"
-              />
-            </a>
+            {socials.map((social, idx) => {
+              return (
+                <a
+                  key={`social-${social.ariaLabel}-${idx}`}
+                  target="_blank"
+                  href={social.link}
+                  className="group text-neutral-300 hover:text-yellow-500"
+                  rel="noopener noreferrer"
+                  aria-label={social.ariaLabel}
+                >
+                  <Icon
+                    icon={social.icon}
+                    className="duration-200 text-neutral-300 group-hover:text-yellow-500"
+                  />
+                </a>
+              );
+            })}
           </div>
         </div>
       </div>
