@@ -3,7 +3,7 @@ import * as Icons from "lucide-react";
 export default function Icon({
   icon = "",
   size = 24,
-  color = "black",
+  color = "currentColor",
   className = "",
 }) {
   const LucideIcon = Icons[icon];

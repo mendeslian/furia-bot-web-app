@@ -51,10 +51,10 @@ export function useChatLogic() {
 
   const isLoading = mutation.isPending || mutation.isLoading;
 
-  function handleSend() {
-    if (message.trim() && !isLoading) {
-      const currentMessage = message;
+  function handleSend(messageToSend = message) {
+    const currentMessage = messageToSend.trim();
 
+    if (currentMessage && !isLoading) {
       setMessage("");
 
       setMessages((prev) => [
@@ -81,17 +81,17 @@ export function useChatLogic() {
     navigator.clipboard
       .writeText(textToCopy)
       .then(() => {
-        toast.success("Furia BOT disse", "Mensagem copiada com sucesso");
+        toast.success("Mensagem copiada com sucesso");
       })
       .catch(() => {
-        toast.error("Furia BOT disse", "Não foi possível copiar a mensagem");
+        toast.error("Não foi possível copiar a mensagem");
       });
   }
 
   return {
     message,
-    setMessage,
     messages,
+    setMessage,
     isLoading,
     handleSend,
     handleCopy,

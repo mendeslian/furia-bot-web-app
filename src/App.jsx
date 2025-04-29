@@ -13,14 +13,7 @@ export default function App() {
   return (
     <>
       <QueryClientProvider client={queryClient}>
-        <ToastContainer
-          theme="dark"
-          position="top-right"
-          autoClose={3000}
-          hideProgressBar={false}
-          closeOnClick
-          pauseOnHover
-        />
+        <ToastContainer />
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />

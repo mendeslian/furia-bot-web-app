@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from "uuid";
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -18,9 +19,11 @@ export const chatSlice = createSlice({
     },
     addUserMessage: (state, action) => {
       state.messages.push({
+        id: uuidv4(),
         role: "user",
         message: action.payload,
         parts: [{ text: action.payload }],
+        timestamp: new Date(),
       });
     },
     addLoadingMessage: (state) => {
@@ -33,9 +36,8 @@ export const chatSlice = createSlice({
       state.isLoading = true;
     },
     addBotMessage: (state, action) => {
-      // Remove loading message
       state.messages = state.messages.filter((msg) => !msg.isLoading);
-      // Add bot response
+
       state.messages.push({
         role: "model",
         message: action.payload,
@@ -44,9 +46,8 @@ export const chatSlice = createSlice({
       state.isLoading = false;
     },
     addErrorMessage: (state) => {
-      // Remove loading message
       state.messages = state.messages.filter((msg) => !msg.isLoading);
-      // Add error message
+
       state.messages.push({
         role: "model",
         message: "Erro ao enviar mensagem.",
