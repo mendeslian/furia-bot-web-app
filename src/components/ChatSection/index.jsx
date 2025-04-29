@@ -91,12 +91,74 @@ const MessageCard = memo(function MessageCard({
   );
 });
 
-const EmptyChat = memo(function EmptyChat() {
+const ChatSuggestion = memo(function ChatSuggestion({
+  icon,
+  title,
+  suggestion,
+  setMessage,
+}) {
   return (
-    <div className="flex flex-col items-center justify-center py-2 m-auto">
-      <p className="text-white/40 text-center text-sm">
-        Para começar digite uma mensagem abaixo e aperte o botão para enviar
+    <button
+      className="w-full h-20 flex flex-col gap-1 p-3 bg-neutral-800 rounded-lg duration-200 shadow-2xl cursor-pointer md:max-w-70 hover:bg-neutral-700"
+      onClick={() => {
+        setMessage(suggestion);
+      }}
+    >
+      <div className="flex items-center gap-2">
+        <Icon icon={icon} color="#FFFFFF" size={16} />
+        <strong className="text-sm text-white font-semibold tracking-wid text-left">
+          {title}
+        </strong>
+      </div>
+      <p className="text-xs text-neutral-400 font-semibold text-left">
+        {suggestion}
       </p>
+    </button>
+  );
+});
+
+const EmptyChat = memo(function EmptyChat({ setMessage }) {
+  const suggestions = [
+    {
+      icon: "Users",
+      title: "Line Up",
+      suggestion: "Qual é a line-up atual da furia?",
+    },
+    {
+      icon: "Gamepad2",
+      title: "Próximos jogos",
+      suggestion: "Qual é o calendário de jogos da furia em 2025?",
+    },
+    {
+      icon: "Calendar",
+      title: "Atualizações",
+      suggestion: "Quais são as últimas atualizações da furia?",
+    },
+    {
+      icon: "Medal",
+      title: "Ranking",
+      suggestion: "Qual é o ranking atual da furia?",
+    },
+  ];
+  return (
+    <div className="m-auto px-4">
+      <p className="max-w-142 text-md text-neutral-600 font-semibold text-center leading-5 mb-4">
+        Você pode selecionar um dos prompts abaixo ou escrever o que deseja
+        falar com o FuriaBot!
+      </p>
+      <div className="max-w-142 flex flex-wrap items-center justify-center gap-2">
+        {suggestions.map((sugestion, idx) => {
+          return (
+            <ChatSuggestion
+              key={`suggestion-${idx}`}
+              icon={sugestion.icon}
+              title={sugestion.title}
+              suggestion={sugestion.suggestion}
+              setMessage={setMessage}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 });
@@ -138,7 +200,7 @@ const ChatInput = memo(function ChatInput({
 });
 
 export default function Chat() {
-  const { message, messages, isLoading, handleSend, handleCopy } =
+  const { message, messages, setMessage, isLoading, handleSend, handleCopy } =
     useChatLogic();
 
   const [localMessage, setLocalMessage] = useState("");
@@ -210,7 +272,7 @@ export default function Chat() {
         <div className="bg-neutral-900 w-full h-120 px-4 pt-6 sm:px-8 flex flex-col-reverse gap-8 overflow-y-auto">
           <div ref={messagesEndRef} />
           {messages.length === 0 ? (
-            <EmptyChat />
+            <EmptyChat setMessage={setMessage} />
           ) : (
             reversedMessages.map((msg, idx) => (
               <MessageCard
