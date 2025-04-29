@@ -89,7 +89,6 @@ html {
   will-change: left;
 }
 
-/* Add accessible focus styles */
 :focus-visible {
   outline: 2px solid #eab308;
   outline-offset: 2px;
