@@ -99,14 +99,19 @@ const ChatSuggestion = memo(function ChatSuggestion({
 }) {
   return (
     <button
-      className="w-full h-20 flex flex-col gap-1 p-3 bg-neutral-800 rounded-lg duration-200 shadow-2xl cursor-pointer md:max-w-70 hover:bg-neutral-700"
+      title="Selecionar mensagem"
+      className="group w-full h-20 flex flex-col gap-1 p-3 bg-neutral-800 rounded-lg duration-200 shadow-2xl cursor-pointer md:max-w-70 hover:bg-neutral-700"
       onClick={() => {
         setMessage(suggestion);
       }}
     >
       <div className="flex items-center gap-2">
-        <Icon icon={icon} color="#FFFFFF" size={16} />
-        <strong className="text-sm text-white font-semibold tracking-wid text-left">
+        <Icon
+          icon={icon}
+          size={16}
+          className="duration-200 text-white group-hover:text-yellow-500"
+        />
+        <strong className="text-sm text-white font-semibold tracking-wid text-left duration-200 group-hover:text-yellow-500">
           {title}
         </strong>
       </div>
@@ -142,9 +147,9 @@ const EmptyChat = memo(function EmptyChat({ setMessage }) {
   ];
   return (
     <div className="m-auto px-4">
-      <p className="max-w-142 text-md text-neutral-600 font-semibold text-center leading-5 mb-4">
-        Você pode selecionar um dos prompts abaixo ou escrever o que deseja
-        falar com o FuriaBot!
+      <p className="max-w-100 text-md text-neutral-600 font-semibold text-center leading-5 mx-auto mb-4">
+        Escolha uma mensagem abaixo ou mande a sua para trocar uma ideia com o
+        FuriaBot!
       </p>
       <div className="max-w-142 flex flex-wrap items-center justify-center gap-2">
         {suggestions.map((sugestion, idx) => {
@@ -184,15 +189,20 @@ const ChatInput = memo(function ChatInput({
         ref={inputRef}
       />
       <button
-        title={value === "" ? "Escreva uma mensagem" : "Enviar"}
-        className="w-14 h-10 flex justify-center items-center bg-[#0b0b0b] duration-200 rounded cursor-pointer shadow-2xl hover:bg-neutral-800 disabled:cursor-default disabled:bg-neutral-600 disabled:opacity-50"
+        title="Enviar"
+        className="group w-14 h-10 flex justify-center items-center bg-[#0b0b0b] duration-200 rounded cursor-pointer shadow-2xl hover:bg-neutral-800 disabled:pointer-events-none disabled:bg-neutral-600 disabled:opacity-50"
         onClick={onSend}
         disabled={isDisabled || !value.trim() || value === ""}
       >
         {isDisabled ? (
           <Loader />
         ) : (
-          <Icon icon="Send" size={20} color="white" title="Enviar mensagem" />
+          <Icon
+            icon="Send"
+            size={20}
+            className="duration-200 text-white group-hover:text-yellow-500"
+            title="Enviar mensagem"
+          />
         )}
       </button>
     </div>
