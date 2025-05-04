@@ -1,5 +1,5 @@
 // Components
-import Icon from "../icon";
+import Icon from "../Icon";
 
 // Assets
 import FuriaShirtBackground from "../../assets/furia-shirt-background.png";
