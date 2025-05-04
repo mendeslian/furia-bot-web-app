@@ -4,7 +4,7 @@ import { memo } from "react";
 
 // Components
 import Input from "../Input";
-import Icon from "../icon";
+import Icon from "../Icon";
 import Loader from "../Loader";
 import TextLoader from "../TextLoader";
 
